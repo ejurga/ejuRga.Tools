@@ -75,9 +75,38 @@ twentycol = function() {
     return(palette)
 }
 
-
+#' Save a figure as a pdf
+#' 
+#' This function exists as a convienient wrapper around the usual workflow of 
+#' saving a ggplot figure as a pdf. The dimensions of the pdf are wrapped into 
+#' keywords. The path is handled automatically, as I usually save figures in 
+#' the same directory structure for each project. And a convinient option exists
+#' to check for the existence of the pdf and not generate it if specified. 
+#' 
+#' @usage save_figure(fig, size='sixth', filename='scratch.pdf', 
+#'        dir='results/figures/', margins=1, units='in', regen=TRUE)
+#'
+#' @param fig The ggplot object to save
+#' @param size The size of the pdf. Takes one of 'full', 'half', 'quarter', 'third', 
+#' 	or 'sixth'. Alternatively, supply a vector of lencth 2, as c('height', 'width').
+#' \describe{ 
+#' 	\item{full}{Full page}
+#' 	\item{half}{Half of the page, folded height-wise}
+#' 	\item{quarter}{One quarter of the page, folded height and width-wise}
+#' 	\item{third}{One third of the page, folded height-wise}
+#' 	\item{sixth}{One sixth of the page, folded in half width-wise, and in a 
+#'		       third height-wise}
+#'}
+#' @param filename Name of the file. Include subdirectories.
+#' @param dir The default directory to save the files in
+#' @param margins The margins of the main file to which the figure is intended to be 
+#'        saved.
+#' @param regen Whether or not to regenerate the figure on each source, given that the 
+#'        figure already exists. Beware of this option, use only on very large figures.
+#'
+#' @return Nothing, but save the figure as a pdf.
 save_figure = function(fig, size='sixth', filename='scratch.pdf',
-                       dir='results/figures/', margins=1, units='in',regen=TRUE){
+                       dir='results/figures/', margins=1, regen=TRUE){
 
     # name = 'test'
     # path = fwd
