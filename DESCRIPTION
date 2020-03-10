@@ -1,13 +1,15 @@
 Package: ejuRga.Tools
-Title: What the Package Does (One Line, Title Case)
+Title: A Personal Collection of Random R Functions.
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Emil",
+           family = "Jurga",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "emiljurga@hotmail.com",
            comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
-Description: What the package does (one paragraph).
+Description: Simply, this package is a collection of R tools that I find useful no matter the project I am working on. They live in this package. I doubt that this repository will 
+be useful for anyone other then me, however. Still, this makes it easy to use devtools to download and install the package into the conda environment that the package is based out 
+of.
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
