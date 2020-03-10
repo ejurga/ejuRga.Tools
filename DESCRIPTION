@@ -4,12 +4,16 @@ Version: 0.0.0.9000
 Authors@R: 
     person(given = "Emil",
            family = "Jurga",
-           role = c("aut", "cre"),
+           role = c('aut', 'cre'),
            email = "emiljurga@hotmail.com",
            comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
-Description: Simply, this package is a collection of R tools that I find useful no matter the project I am working on. They live in this package. I doubt that this repository will 
-be useful for anyone other then me, however. Still, this makes it easy to use devtools to download and install the package into the conda environment that the package is based out 
-of.
+Description: Simply, this package is a collection of R tools that I find useful no matter the 
+	project I am working on. They live in this package. I doubt that this repository will 
+	be useful for anyone other then me, however. Still, this makes it easy to use devtools 
+	to download and install the package into the conda environment that the package is 
+	based out of.
+Imports: dplyr
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.0.2
