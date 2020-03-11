@@ -105,6 +105,8 @@ twentycol = function() {
 #'        figure already exists. Beware of this option, use only on very large figures.
 #'
 #' @return Nothing, but save the figure as a pdf.
+#'
+#' @export
 save_figure = function(fig, size='sixth', filename='scratch.pdf',
                        dir='results/figures/', margins=1, regen=TRUE){
 
