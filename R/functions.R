@@ -133,7 +133,7 @@ save_figure = function(fig, size='sixth', filename='scratch.pdf',
     dim$w = 8.5 - margins*2
     if (is.character(size)) {
         if (size=='full') {
-            height = dim$h
+            height = dim$h-1
             width  = dim$w
         } else if (size=='half') {
             height = dim$h/2
