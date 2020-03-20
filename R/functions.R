@@ -24,11 +24,18 @@ dil = function(){
 #' Use this function to return a custom named list of 20 colors. These are somewhat
 #' useful for metagenomic graphs.
 #'
-#' @return Named list of 20 colors
+#' @param ... If blank: return all 20 colors. If a single integer, return that amount of colors.
+#' Otherwise, specify the colors, by name. Possible colors: "red", "green", "blue", 
+#' "orange", "purple", "cyan", "magenta", "lime", "pink", "yellow", "teal", "lavender", 
+#' "brown", "beige", "maroon", "mint", "olive", "apricot", "navy", "grey".
+#'
+#' '@returns Vector of colors. If specifying names, a named vector is returned.
 #'
 #' @export
-twentycol = function() {
-
+twentycol = function(...) {
+   
+    cols = c(...) 
+    
     palette = c( red = '#e6194b',
                  green = '#3cb44b',
                  blue = '#4363d8',
@@ -49,8 +56,14 @@ twentycol = function() {
                  apricot = '#ffd8b1',
                  navy = '#000075',
                  grey = '#808080' )
-
-    return(palette)
+   
+    if (is.null(cols)) {
+        return(unname(palette))
+    } else if (is.numeric(cols)) {
+        return(unname(palette[1:cols]))
+    } else {
+        return(palette[cols])
+    }
 }
 
 #' Save a figure as a pdf
