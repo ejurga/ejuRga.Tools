@@ -4,10 +4,15 @@
 \alias{twentycol}
 \title{Return named vector of 20 custom colors}
 \usage{
-twentycol()
+twentycol(...)
 }
-\value{
-Named list of 20 colors
+\arguments{
+\item{...}{If blank: return all 20 colors. If a single integer, return that amount of colors.
+Otherwise, specify the colors, by name. Possible colors: "red", "green", "blue", 
+"orange", "purple", "cyan", "magenta", "lime", "pink", "yellow", "teal", "lavender", 
+"brown", "beige", "maroon", "mint", "olive", "apricot", "navy", "grey".
+
+'@returns Vector of colors. If specifying names, a named vector is returned.}
 }
 \description{
 Use this function to return a custom named list of 20 colors. These are somewhat

@@ -4,20 +4,20 @@
 \alias{save_figure}
 \title{Save a figure as a pdf}
 \usage{
-save_figure(fig, size='sixth', filename='scratch.pdf', 
+save_figure(fig, size='sixth', filename='scratch.pdf',
        dir='results/figures/', margins=1, units='in', regen=TRUE)
 }
 \arguments{
 \item{fig}{The ggplot object to save}
 
-\item{size}{The size of the pdf. Takes one of 'full', 'half', 'quarter', 'third', 
+\item{size}{The size of the pdf. Takes one of 'full', 'half', 'quarter', 'third',
     or 'sixth'. Alternatively, supply a vector of lencth 2, as c('height', 'width').
-\describe{ 
+\describe{
     \item{full}{Full page}
     \item{half}{Half of the page, folded height-wise}
     \item{quarter}{One quarter of the page, folded height and width-wise}
     \item{third}{One third of the page, folded height-wise}
-    \item{sixth}{One sixth of the page, folded in half width-wise, and in a 
+    \item{sixth}{One sixth of the page, folded in half width-wise, and in a
            third height-wise}
 }}
 
@@ -25,19 +25,19 @@ save_figure(fig, size='sixth', filename='scratch.pdf',
 
 \item{dir}{The default directory to save the files in}
 
-\item{margins}{The margins of the main file to which the figure is intended to be 
+\item{margins}{The margins of the main file to which the figure is intended to be
 saved.}
 
-\item{regen}{Whether or not to regenerate the figure on each source, given that the 
+\item{regen}{Whether or not to regenerate the figure on each source, given that the
 figure already exists. Beware of this option, use only on very large figures.}
 }
 \value{
 Nothing, but save the figure as a pdf.
 }
 \description{
-This function exists as a convienient wrapper around the usual workflow of 
-saving a ggplot figure as a pdf. The dimensions of the pdf are wrapped into 
-keywords. The path is handled automatically, as I usually save figures in 
+This function exists as a convienient wrapper around the usual workflow of
+saving a ggplot figure as a pdf. The dimensions of the pdf are wrapped into
+keywords. The path is handled automatically, as I usually save figures in
 the same directory structure for each project. And a convinient option exists
 to check for the existence of the pdf and not generate it if specified.
 }
