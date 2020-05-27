@@ -8,16 +8,6 @@ pp = function(df){print(df, n=Inf)}
 #' @export
 pw = function(df){ print(df, width=Inf) }
 
-#' Act as a quick source functions hack
-#'
-#' As title. Quickly document and install custom functions. Also, restart Rstudio.
-#'
-#' @export
-dil = function(){
-    devtools::document('src/func')
-    devtools::install('src/func/')
-    .rs.restartR()
-}
 
 #' Return named vector of 20 custom colors
 #'
@@ -98,21 +88,17 @@ twentycol = function(...) {
 #' @return Nothing, but save the figure as a pdf.
 #'
 #' @export
-save_figure = function(fig, size='sixth', filename='scratch.pdf',
-                       dir='results/figures/', margins=1, regen=TRUE){
+save_figure = function(fig, size='sixth', file='results/figures/scratch.pdf',
+                       margins=1, regen=TRUE){
 
     # name = 'test'
     # path = fwd
     # fig=global.net
     # name=NULL
 
-    # Filename
-    # Path to file
-    full_path = paste0(dir, filename)
-
     # Regen or not?
     if (regen!=TRUE) {
-        if (file.exists(full_path)){
+        if (file.exists(file)){
             warning('plot exists with regen set to FALSE; not plotting')
             return(NULL)
         }
@@ -150,7 +136,7 @@ save_figure = function(fig, size='sixth', filename='scratch.pdf',
         }
     }
 
-    pdf(file=full_path, width=width, height=height, title=filename)
+    pdf(file=file, width=width, height=height)
     print(fig)
     dev.off()
 }
