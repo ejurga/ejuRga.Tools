@@ -21,15 +21,15 @@ save_figure(fig, size='sixth', filename='scratch.pdf',
            third height-wise}
 }}
 
-\item{filename}{Name of the file. Include subdirectories.}
-
-\item{dir}{The default directory to save the files in}
-
 \item{margins}{The margins of the main file to which the figure is intended to be
 saved.}
 
 \item{regen}{Whether or not to regenerate the figure on each source, given that the
 figure already exists. Beware of this option, use only on very large figures.}
+
+\item{filename}{Name of the file. Include subdirectories.}
+
+\item{dir}{The default directory to save the files in}
 }
 \value{
 Nothing, but save the figure as a pdf.
