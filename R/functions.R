@@ -16,12 +16,10 @@ quick_install = function(){
 
 #' Quickly print inf rows
 #'
-#' @export
 pp = function(df){print(df, n=Inf)}
 
 #' Quickly print inf columns
 #'
-#' @export
 pw = function(df){ print(df, width=Inf) }
 
 
@@ -37,7 +35,6 @@ pw = function(df){ print(df, width=Inf) }
 #'
 #' '@returns Vector of colors. If specifying names, a named vector is returned.
 #'
-#' @export
 twentycol = function(...) {
    
     cols = c(...) 
@@ -103,7 +100,6 @@ twentycol = function(...) {
 #'
 #' @return Nothing, but save the figure as a pdf.
 #'
-#' @export
 save_figure = function(fig, size='sixth', file='results/figures/scratch.pdf',
                        margins=1, regen=TRUE){
 
