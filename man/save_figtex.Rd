@@ -54,9 +54,3 @@ some convinient options. The location of the saved figure can be specifed. Optio
 this function will generate a latex-file of the generated plot that can be input into
 a master tex document. This will include a caption that is specied as an argument.
 }
-\note{
-For the latex document to compile properly with the include statement, include
-the following in the preamble, where the PATH is the relative root of the project
-directory:
-\texttt{\makeatletter \def\input@path{{PATH}} \makeatother }
-}
