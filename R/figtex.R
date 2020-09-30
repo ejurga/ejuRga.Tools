@@ -59,10 +59,6 @@ write_latex_string = function(caption, figure.path, title){
 #'
 #' @return Print out file names and save the include string to the cliopboard.
 #'
-#' @note For the latex document to compile properly with the include statement, include
-#' the following in the preamble, where the PATH is the relative root of the project
-#' directory:
-#' \texttt{\makeatletter \def\input@path{{PATH}} \makeatother }
 #' @export
 save_figtex = function(plot,
                        title,
