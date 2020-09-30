@@ -1,6 +1,7 @@
 #' Convinience function for modifying ggplot legend sizes in a consistent way
 #'
 #' @param size Size of the title, text, and boxes of the legend, in pt
+#' @export
 gglegend_size = function(size){
   t = theme(legend.key.size=unit(size, 'pt'),
             legend.text=element_text(size=size),
@@ -19,7 +20,7 @@ gglegend_size = function(size){
 #' "brown", "beige", "maroon", "mint", "olive", "apricot", "navy", "grey".
 #'
 #' '@returns Vector of colors. If specifying names, a named vector is returned.
-#'
+#' @export
 twentycol = function(...) {
 
     cols = c(...)

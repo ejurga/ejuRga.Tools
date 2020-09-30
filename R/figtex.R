@@ -37,8 +37,6 @@ write_latex_string = function(caption, figure.path, title){
 #' this function will generate a latex-file of the generated plot that can be input into
 #' a master tex document. This will include a caption that is specied as an argument.
 #'
-#'
-#'
 #' @param plot The plot to save
 #' @param title The title of the plot, which will serve as a base file name, and the
 #' latex label.
@@ -65,6 +63,7 @@ write_latex_string = function(caption, figure.path, title){
 #' the following in the preamble, where the PATH is the relative root of the project
 #' directory:
 #' \texttt{\makeatletter \def\input@path{{PATH}} \makeatother }
+#' @export
 save_figtex = function(plot,
                        title,
                        caption,

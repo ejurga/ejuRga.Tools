@@ -1,6 +1,7 @@
 #' Quickly load the Rfunctions package
 #'
 #' Load the package at 'bin/Rfunctions'
+#' @export
 quick_load = function(){ devtools::load_all('bin/Rfunctions') }
 
 #' Install the Rfunctions package
@@ -16,10 +17,12 @@ quick_install = function(){
 
 #' Quickly print inf rows
 #'
+#' @export
 pp = function(df){print(df, n=Inf)}
 
 #' Quickly print inf columns
 #'
+#' @export
 pw = function(df){ print(df, width=Inf) }
 
 
