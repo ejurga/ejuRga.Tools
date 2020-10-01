@@ -68,6 +68,7 @@ save_figtex = function(plot,
                        latex.dir='results/tex',
                        margins=0.75,
                        type=c('pdf', 'png'),
+                       res=300,
                        latex=TRUE){
 
     require(clipr)
@@ -125,7 +126,7 @@ save_figtex = function(plot,
         dev.off()
     } else if (type=='png'){
         png(filename=figure.path, width=width, height=height,
-            units='in')
+            units='in', res=res)
         print(plot)
         dev.off()
     }
