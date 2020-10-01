@@ -29,6 +29,27 @@ write_latex_string = function(caption, figure.path, title){
 \\end{figure}')
 }
 
+#' Create file name and print plot
+#'
+#' Internal function for \texttt{save_figtex}
+#'
+make_plot_file = function(type, plot, figure.dir, title, res, width, height){
+
+    if (type=='pdf'){
+        file.path = paste0(figure.dir,'/',title,'.pdf')
+        pdf(file=file.path, width=width, height=height)
+        print(plot)
+        dev.off()
+    } else if (type=='png'){
+        file.path = paste0(figure.dir,'/',title,'.png')
+        png(filename=file.path, width=width, height=height,
+            units='in', res=res)
+        print(plot)
+        dev.off()
+    }
+    return(file.path)
+}
+
 #' Create a plot, and create a tex figure string
 #'
 #' This function takes a plot object and prints it out as a file onto the disk, either
@@ -53,6 +74,7 @@ write_latex_string = function(caption, figure.path, title){
 #'}
 #' @param margins The margins of the main file to which the figure is intended to be
 #' saved.
+#' @param type What to save the raw image as, either as a pdf or a png.
 #' @param figure.dir Which directory to save the file.
 #' @param latex.dir Which directory to save the latex include file.
 #' @param latex Create a latex include file.
@@ -67,7 +89,7 @@ save_figtex = function(plot,
                        figure.dir='results/figures',
                        latex.dir='results/tex',
                        margins=0.75,
-                       type=c('pdf', 'png'),
+                       type=c('pdf', 'png', 'both'),
                        res=300,
                        latex=TRUE){
 
@@ -75,9 +97,6 @@ save_figtex = function(plot,
 
     # Match args
     type = match.arg(type)
-    # Generate the basename and filepath
-    file.base = paste0(title, '.', type)
-    figure.path = paste0(figure.dir, '/', file.base)
 
     # Ensure the 'title' of the figure is unique amoung those figures in the figures
     # directory!
@@ -119,20 +138,17 @@ save_figtex = function(plot,
         }
     }
 
-    # Plot, depending on the device.
-    if (type=='pdf'){
-        pdf(file=figure.path, width=width, height=height)
-        print(plot)
-        dev.off()
-    } else if (type=='png'){
-        png(filename=figure.path, width=width, height=height,
-            units='in', res=res)
-        print(plot)
-        dev.off()
+    # Plot the figures!
+    if (type!='both'){
+        figure.path = make_plot_file(type, plot, figure.dir, title, res, width, height)
+        print(sprintf('Created figure at file: %s', figure.path))
+    } else {
+        make_plot_file(type='pdf', plot, figure.dir, title, res, width, height)
+        figure.path = make_plot_file(type='png', plot, figure.dir, title, res, width, height)
+        print(sprintf('Created png and pdf file, png is at %s', figure.path))
     }
 
-    sprintf('Created figure at file: %s', figure.path)
-
+    # Create the latex document
     if(latex==TRUE){
         # Create the tex document for that file.
         tex.path = paste0(latex.dir, '/', title, '.tex')

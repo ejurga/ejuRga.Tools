@@ -12,7 +12,8 @@ save_figtex(
   figure.dir = "results/figures",
   latex.dir = "results/tex",
   margins = 0.75,
-  type = c("pdf", "png"),
+  type = c("pdf", "png", "both"),
+  res = 300,
   latex = TRUE
 )
 }
@@ -41,6 +42,8 @@ of lencth 2, as c('height', 'width'). String optsion are:
 
 \item{margins}{The margins of the main file to which the figure is intended to be
 saved.}
+
+\item{type}{What to save the raw image as, either as a pdf or a png.}
 
 \item{latex}{Create a latex include file.}
 }
