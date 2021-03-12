@@ -84,7 +84,7 @@ make_plot_file = function(type, plot, figure.dir, title, res, width, height){
 #' @export
 save_figtex = function(plot,
                        title,
-                       caption,
+                       caption='',
                        size='third',
                        figure.dir='results/figures',
                        latex.dir='results/tex',
