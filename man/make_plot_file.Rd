@@ -7,5 +7,5 @@
 make_plot_file(type, plot, figure.dir, title, res, width, height)
 }
 \description{
-Internal function for \texttt{save_figtex}
+Internal function for \code{save_figtex}
 }

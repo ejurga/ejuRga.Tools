@@ -31,7 +31,7 @@ write_latex_string = function(caption, figure.path, title){
 
 #' Create file name and print plot
 #'
-#' Internal function for \texttt{save_figtex}
+#' Internal function for \code{save_figtex}
 #'
 make_plot_file = function(type, plot, figure.dir, title, res, width, height){
 
