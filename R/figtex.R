@@ -158,7 +158,7 @@ save_figtex = function(plot,
         print('Input string for latex document. Copied also to clipboard')
         input.string = sprintf('\\input{%s}', tex.path)
         cat(input.string, '\n')
-        clipr::write_clip(input.string)
+        clipr::write_clip(input.string, allow_non_interactive = TRUE)
     }
 }
 
